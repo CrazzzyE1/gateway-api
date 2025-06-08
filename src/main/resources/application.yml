@@ -39,12 +39,6 @@
               uri: http://discovery-service:9031
               predicates:
                 - Path=/eureka/**
-  #          - id: keycloak
-  #            uri: http://host.docker.internal:9090
-  #            predicates:
-  #              - Path=/keycloak/**
-  #            filters:
-  #              - StripPrefix=1
   server:
     port: 9000
 
@@ -73,72 +67,3 @@
       root: info
       org.springframework.cloud.gateway: trace
       org.springframework.cloud.gateway.route.RouteDefinitionLocator: DEBUG
-
-
-  #spring:
-  #  application:
-  #    name: gateway-api
-  #  cloud:
-  #    gateway:
-  #      server:
-  #        webmvc:
-  #          routes:
-  #            - id: user-service
-  #              uri: lb://user-service
-  #              predicates:
-  #                - Path=/api/users
-  #            - id: wishlist-service
-  #              uri: lb://wishlist-service
-  #              predicates:
-  #                - Path=/api/wishlists
-  #            - id: discovery-service
-  #              uri: http://discovery-service:9031
-  #              predicates:
-  #                - Path=/eureka/web
-  #              filters:
-  #                - SetPath=/
-  #            - id: discovery-service-static
-  #              uri: http://discovery-service:9031
-  #              predicates:
-  #                - Path=/eureka/**
-  #            #            - id: keycloak
-  #            #              uri: http://keycloak:8080
-  #            #              predicates:
-  #            #                - Path=/keycloak/**
-  #            - id: keycloak
-  #              uri: http://keycloak:8080
-  #              predicates:
-  #                - Path=/keycloak/**
-  #              filters:
-  #                - PreserveHostHeader
-  #                - AddRequestHeader=X-Forwarded-Host, localhost:9000
-  #                - AddRequestHeader=X-Forwarded-Port, 9000
-  #                - AddRequestHeader=X-Forwarded-Proto, http
-  #
-  #server:
-  #  port: 9000
-  #
-  #management:
-  #  endpoints:
-  #    web:
-  #      exposure:
-  #        include: health,info
-  #  endpoint:
-  #    health:
-  #      show-details: always
-  #eureka:
-  #  client:
-  #    service-url:
-  #      defaultZone: ${EUREKA_SERVER_URL}
-  #    register-with-eureka: true
-  #    fetch-registry: true
-  #  instance:
-  #    prefer-ip-address: true
-  #    lease-renewal-interval-in-seconds: 30
-  #    lease-expiration-duration-in-seconds: 90
-  #
-  #logging:
-  #  level:
-  #    root: info
-  #    org.springframework.cloud.gateway: trace
-  #    org.springframework.cloud.gateway.route.RouteDefinitionLocator: info
