@@ -21,7 +21,7 @@ spring:
       enabled: true
       cache:
         enabled: true
-        ttl: 5s  # время жизни кэша балансировщика нагрузки
+        ttl: 5s
     gateway:
       server:
         webmvc:
