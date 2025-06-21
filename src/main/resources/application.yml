@@ -29,7 +29,11 @@ spring:
           - id: user-service
             uri: lb://user-service
             predicates:
-              - Path=/api/v1/users/**
+              - Path=/api/v1/profiles/**
+          - id: user-service-auth
+            uri: lb://user-service
+            predicates:
+              - Path=/api/v1/authorize/**
           - id: wishlist-service
             uri: lb://wishlist-service
             predicates:
