@@ -38,6 +38,10 @@ spring:
             uri: lb://wishlist-service
             predicates:
               - Path=/api/v1/wishlists/**
+          - id: wishlist-service-gifts
+            uri: lb://wishlist-service
+            predicates:
+              - Path=/api/v1/gifts/**
           - id: discovery-service
             uri: http://discovery-service:9031
             predicates:
