@@ -42,6 +42,14 @@ spring:
             uri: lb://wishlist-service
             predicates:
               - Path=/api/v1/gifts/**
+          - id: files-service-avatars
+            uri: lb://files-service
+            predicates:
+              - Path=/api/v1/avatars/**
+          - id: files-service-pictures
+            uri: lb://files-service
+            predicates:
+              - Path=/api/v1/pictures/**
           - id: discovery-service
             uri: http://discovery-service:9031
             predicates:
