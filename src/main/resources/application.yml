@@ -30,6 +30,10 @@ spring:
             uri: lb://user-service
             predicates:
               - Path=/api/v1/profiles/**
+          - id: user-service-friends
+            uri: lb://user-service
+            predicates:
+              - Path=/api/v1/friends/**
           - id: user-service-auth
             uri: lb://user-service
             predicates:
