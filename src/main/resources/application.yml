@@ -50,6 +50,10 @@ spring:
             uri: lb://wishlist-service
             predicates:
               - Path=/api/v1/gifts/**
+          - id: notification-service-notifications
+            uri: lb:///notification-service
+            predicates:
+              - Path=/api/v1/notifications/**
           - id: files-service-avatars
             uri: lb://files-service
             predicates:
