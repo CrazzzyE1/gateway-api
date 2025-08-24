@@ -62,6 +62,10 @@ spring:
             uri: lb://files-service
             predicates:
               - Path=/api/v1/pictures/**
+          - id: likes-service
+            uri: lb://likes-service
+            predicates:
+              - Path=/api/v1/likes/**
           - id: discovery-service
             uri: http://discovery-service:9031
             predicates:
