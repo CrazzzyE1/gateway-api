@@ -80,6 +80,10 @@ spring:
             uri: http://discovery-service:9031
             predicates:
               - Path=/eureka/**
+          - id: gift-card-parser
+            uri: lb://gift-card-parser
+            predicates:
+              - Path=/api/v1/parse/**
 server:
   port: 9000
 
